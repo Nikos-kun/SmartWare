@@ -1,0 +1,75 @@
+<!--Pelates Page-->
+<div ng-controller="PelatesCtrl">
+    <!--Menu-->
+    <div class="row" style="background: #ebac13;">
+
+        <div class="col-1 col-sm-1 col-md-1">
+            <a href="#/main" style="color: black;"> <i class="fas fa-chevron-left  fa-2x"></i> </a>
+        </div>
+
+        <div class="col-10 col-sm-10 col-md-10" style="text-align: center;">
+            {{appDetails.title}}
+        </div>
+
+        <div class="col-1 col-sm-1 col-md-1">
+            <i class="fas fa-power-off fa-2x float-right"></i>
+        </div>
+    </div>
+    <!--End of Menu-->
+
+
+    <!--Paragraph-->
+    <p class="text-muted text-right"><b>Sidiropoulos Kostas</b></p>
+    <!--End of Paragraph-->
+
+    <!--Search Bar-->
+    <div class="row">
+        <div class="col-2 col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
+        <div class="col-8 col-sm-8 col-md-6 col-lg-4 col-xl-4 text-center">
+            <input type="text" placeholder="Αναζήτηση Πελάτη" ng-model="searchText" class="text-center border-dark form-control" />
+            <br />
+        </div>
+        <div class="col-2 col-sm-2 col-md-3 col-lg-4 col-xl-4">
+            <img class="float-right" style="width: 40px; height: 30px;" src="img\3.png">
+        </div>
+    </div>
+    <!--End of Search Bar-->
+
+    <!--Pelates Table-->
+    <div>
+        <table class="table table-bordered table-responsive">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Company Name:</th>
+                    <th scope="col">Contact Name:</th>
+                    <th scope="col">Contact Title:</th>
+                    <th scope="col">Address:</th>
+                    <th scope="col">City:</th>
+                    <th scope="col">Postal Code:</th>
+                    <th scope="col">Country:</th>
+                    <th scope="col">Phone:</th>
+                    <th scope="col">Fax:</th>
+                    <th scope="col">Region:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in pelates | filter:searchText">
+                    <th>{{x.Id}}</th>
+                    <td>{{x.CompanyName}}</td>
+                    <td>{{x.ContactName}}</td>
+                    <td>{{x.ContactTitle}}</td>
+                    <td>{{x.Address}}</td>
+                    <td>{{x.City}}</td>
+                    <td>{{x.PostalCode}}</td>
+                    <td>{{x.Country}}</td>
+                    <td>{{x.Phone}}</td>
+                    <td>{{x.Fax}}</td>
+                    <td>{{x.Region}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--End of Pelates Table-->
+</div>
+<!--End of Pelates Page-->
