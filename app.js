@@ -14,7 +14,7 @@
 			// route for the menu page
 			.when('/main', {
 				templateUrl: 'partials/main.html',
-				controller: 'HeaderCtrl'
+				controller: 'MainCtrl'
 			})
 
 			// route for the pelates page
@@ -28,6 +28,7 @@
 	myApp.controller("IndexCtrl", function ($scope) {
 		// create a message to display in our view
 		$scope.appDetails = {};
+
 		$scope.appDetails.menu = "Μενού";
 	});
 
@@ -52,7 +53,6 @@
 				$scope.pelates = response.data.Customers;
 
 			};
-
 		};
 
 		var errorCallBack = function (response) {
